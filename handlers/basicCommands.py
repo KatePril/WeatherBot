@@ -31,7 +31,7 @@ async def process_name(message: types.Message, state: FSMContext):
 
 @dp.message_handler(state=RegForm.city)
 async def process_city(message: types.Message, state: FSMContext):
-    await state.update_data(city=message.text)
+    await state.update_data(city=message.text.capitalize())
     
     data = await state.get_data()
       
